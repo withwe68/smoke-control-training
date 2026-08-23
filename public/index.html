@@ -1,4 +1,4 @@
-<title>거실제연설비 직무교육</title>
+<title>원그로브 소방파트 거실제연설비 직무교육</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -85,16 +85,22 @@ h1,h2,h3{font-family:var(--serif);text-wrap:balance;letter-spacing:-.01em}
 @keyframes fadeSlide{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
 
 /* ── Cover page ── */
-.cover{display:flex;flex-direction:column;justify-content:center;align-items:center;
-  min-height:calc(100vh - 120px);text-align:center;padding:2rem}
-.cover .kicker{font-size:.78rem;letter-spacing:.22em;color:var(--ink-3);text-transform:uppercase;margin-bottom:.8rem}
-.cover h1{font-size:clamp(2.4rem,5vw,3.6rem);font-weight:700;color:var(--navy);line-height:1.2}
-.cover .lede{margin:1.2rem auto 0;max-width:56ch;color:var(--ink-2);font-size:clamp(.95rem,2vw,1.06rem)}
-.cover .chips{display:flex;flex-wrap:wrap;gap:.7rem;margin-top:2rem;justify-content:center}
+.cover{position:relative;display:flex;flex-direction:column;justify-content:center;align-items:center;
+  min-height:calc(100vh - 120px);text-align:center;padding:2rem;overflow:hidden}
+.cover-watermark{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%) rotate(-28deg);
+  font-family:var(--serif);font-weight:700;font-size:clamp(2.6rem,9vw,6.5rem);white-space:nowrap;
+  color:var(--navy);opacity:.05;letter-spacing:.05em;pointer-events:none;user-select:none;z-index:0}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]) .cover-watermark{opacity:.08}}
+:root[data-theme="dark"] .cover-watermark{opacity:.08}
+.cover .kicker{position:relative;z-index:1;font-size:.78rem;letter-spacing:.22em;color:var(--ink-3);text-transform:uppercase;margin-bottom:.8rem}
+.cover h1{position:relative;z-index:1;font-size:clamp(2.4rem,5vw,3.6rem);font-weight:700;color:var(--navy);line-height:1.2}
+.cover .lede{position:relative;z-index:1;margin:1.2rem auto 0;max-width:56ch;color:var(--ink-2);font-size:clamp(.95rem,2vw,1.06rem)}
+.cover .lede-sub{display:inline-block;margin-top:.35rem;font-size:.8em;color:var(--ink-3)}
+.cover .chips{position:relative;z-index:1;display:flex;flex-wrap:wrap;gap:.7rem;margin-top:2rem;justify-content:center}
 .cover .chip{background:var(--sunken);border:1px solid var(--rule);border-radius:8px;padding:.6rem .95rem;min-width:160px}
 .cover .chip b{display:block;font-family:var(--mono);font-size:.68rem;letter-spacing:.12em;color:var(--amber);font-weight:600}
 .cover .chip span{display:block;font-size:.88rem;color:var(--ink);font-weight:600;margin-top:.15rem}
-.cover .start-btn{margin-top:2.4rem;display:inline-flex;align-items:center;gap:.5rem;
+.cover .start-btn{position:relative;z-index:1;margin-top:2.4rem;display:inline-flex;align-items:center;gap:.5rem;
   background:var(--navy);color:#fff;border:none;padding:.8rem 2rem;border-radius:10px;
   font-size:1rem;font-weight:600;cursor:pointer;font-family:var(--sans);transition:transform .15s}
 .cover .start-btn:hover{transform:scale(1.04)}
@@ -441,7 +447,7 @@ tbody tr:hover td.cite{color:var(--ink-2);font-weight:500}
 <div class="app">
   <aside class="sidebar" id="sidebar">
     <div class="sidebar-head">
-      <h2>거실제연설비 직무교육</h2>
+      <h3>거실제연설비 직무교육</h3>
       <p>NFPC 501 / NFTC 501 — 20 Slides</p>
     </div>
     <nav class="toc" id="toc">
@@ -495,14 +501,15 @@ tbody tr:hover td.cite{color:var(--ink-2);font-weight:500}
     <div class="content" id="content">
       <div class="page active" data-page="0">
         <div class="cover">
+          <div class="cover-watermark" aria-hidden="true">원그로브 맥서브</div>
           <p class="kicker">소방 파트 직무교육</p>
-          <h1>거실제연설비</h1>
-          <p class="lede">개정 화재안전성능기준(NFPC 501)·화재안전기술기준(NFTC 501) 중심 — 20개 주제의 도식과 강의 노트.<br>
-            모든 법정 수치는 「2025 화재안전기준집」 원문과 직접 대조하여 작성했습니다.</p>
+          <h3>거실제연설비</h3>
+          <p class="lede">개정 화재안전성능기준(NFPC 501)·화재안전기술기준(NFTC 501) 중심<br>
+            <span class="lede-sub">— 20개 주제의 도식과 강의 노트</span></p>
           <div class="chips">
             <div class="chip"><b>시행</b><span>2024. 10. 1.</span></div>
             <div class="chip"><b>개정</b><span>소방청고시 제2024-48호</span></div>
-            <div class="chip"><b>교육대상</b><span>원그로브 시설팀 소방파트</span></div>
+            <div class="chip"><b>교육대상</b><span>원그로브 소방파트</span></div>
           </div>
           <button class="start-btn" onclick="next()">강의 시작 →</button>
         </div>
